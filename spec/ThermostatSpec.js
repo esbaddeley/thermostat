@@ -35,7 +35,7 @@ describe ('Thermostat', function(){
 
     it ('sets maxtemp when power saving mode is off', function() {
       thermostat1.temperature = 32;
-      thermostat1.isntPowerSaving()
+      thermostat1.isntPowerSaving();
       expect(thermostat1.upButton()).toEqual("max temp reached");
     });
   });
