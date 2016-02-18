@@ -6,6 +6,8 @@
   <script type="text/javascript" src="js/bower_components/jquery-thermometer/js/jquery.thermometer.js"></script>
   <script src="js/thermostat.js"></script>
   <script src="js/thermostatUi.js"></script>
+  <link rel='stylesheet' type='text/css' href='css/reset.css'>
+  <link rel='stylesheet' type='text/css' href='css/styles.css'>
   <title>
     Thermostat
   </title>
@@ -13,25 +15,47 @@
 
 <body>
 
-<section id=controls>
-  <button id='reset' type='submit' >Reset</button> <br> <br>
-  <button id='tempup' type='submit' >Raise temperature</button> <br> <br>
-  <button id='tempdown' type='submit' >Lower temperature</button> <br> <br>
-  <button id='poweron' type='submit' >Power Save Mode on</button> <br> <br>
-  <button id='poweroff' type='submit' >Power Save Mode off</button> <br> <br>
-  Power saving mode is <span id="power-saving-status">on</span> <br> <br>
-  <!-- <button id="weather" type="submit"> Weather </button> -->
-  <p id='cityName'></p>
-  <p id='temp'></p>
-  <p id='forecast'></p>
-</section>
-<form id="userInput">
-  <input id="city"  type='text' name="q"> </input>
-  <input type='submit'> </input>
-</form>
-<br>
-<section id="temperature">
-</section>
+  <header id='controls'>
+
+    <h1> Thermostat </h1>
+
+    <nav class='power_controls'>
+      <button id='reset' type='submit' >Reset</button>
+      <button id='tempup' type='submit' >Raise temperature</button>
+      <button id='tempdown' type='submit' >Lower temperature</button>
+    </nav>
+
+    <nav class='power_buttons'>
+      <button id='poweron' type='submit' >Power Save Mode on</button>
+      <button id='poweroff' type='submit' >Power Save Mode off</button>
+    </nav>
+  </header>
+
+  <section id='content'>
+
+    <section class='power_status'>
+      <h1>Power saving mode is <span id="power-saving-status">on</span></h1>
+    </section>
+
+    <section id="temperature">
+    </section>
+
+    <section id='weather' >
+      <p id='cityName'></p>
+      <p id='temp'></p>
+      <p id='forecast'></p>
+    </section>
+
+  </section>
+
+  <section id=city_weather>
+
+  <form id="userInput">
+    <input id="city"  type='text' name="q"> </input>
+    <input type='submit'> </input>
+  </form>
+
+  </section>
 
 </body>
 

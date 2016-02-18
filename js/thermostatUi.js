@@ -20,7 +20,7 @@ $( document ).ready(function() {
       }
     };
 
-  $('body').css('background-color', changeColour);
+  $('section#temperature').css('color', changeColour);
 
   $('#temperature').text(thermostat.temperature);
 
@@ -32,13 +32,13 @@ $( document ).ready(function() {
   $('#tempup').click(function(){
     thermostat.up();
     $('#temperature').text(thermostat.temperature);
-    $('body').css('background-color', changeColour);
+    $('section#temperature').css('color', changeColour);
   });
 
   $('#tempdown').click(function(){
     thermostat.down();
     $('#temperature').text(thermostat.temperature);
-    $('body').css('background-color', changeColour);
+    $('section#temperature').css('color', changeColour);
   });
 
   $('#poweron').click(function(){
