@@ -14,13 +14,21 @@
 <body>
 
 <section id=controls>
-  <button id='reset' type='submit' >Reset</button>
-  <button id='tempup' type='submit' >Raise temperature</button>
-  <button id='tempdown' type='submit' >Lower temperature</button>
-  <button id='poweron' type='submit' >Power Save Mode on</button>
-  <button id='poweroff' type='submit' >Power Save Mode off</button>
-  Power saving mode is <span id="power-saving-status">on</span>
+  <button id='reset' type='submit' >Reset</button> <br> <br>
+  <button id='tempup' type='submit' >Raise temperature</button> <br> <br>
+  <button id='tempdown' type='submit' >Lower temperature</button> <br> <br>
+  <button id='poweron' type='submit' >Power Save Mode on</button> <br> <br>
+  <button id='poweroff' type='submit' >Power Save Mode off</button> <br> <br>
+  Power saving mode is <span id="power-saving-status">on</span> <br> <br>
+  <!-- <button id="weather" type="submit"> Weather </button> -->
+  <p id='cityName'></p>
+  <p id='temp'></p>
+  <p id='forecast'></p>
 </section>
+<form id="userInput">
+  <input id="city"  type='text' name="q"> </input>
+  <input type='submit'> </input>
+</form>
 <br>
 <section id="temperature">
 </section>
