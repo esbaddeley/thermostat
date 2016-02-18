@@ -1,11 +1,11 @@
 .low {
-  background-color: lightblue
+  background-color: lightblue;
 }
 
 .medium {
-  background-color: red
+  background-color: green;
 }
 
 .high {
-  background-color: green
+  background-color: red;
 }
