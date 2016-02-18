@@ -1,6 +1,11 @@
 describe ('Thermostat', function(){
-  thermostat1 = new Thermostat();
+  var thermostat1;
+  var temp;
 
+  beforeEach(function() {
+    thermostat1 = new Thermostat();
+    temp = thermostat1.temperature;
+  });
 
     it ('sets thermostat temperature to 20 degrees', function(){
       expect(thermostat1.temperature).toEqual(20);
@@ -13,9 +18,8 @@ describe ('Thermostat', function(){
 
     it ('decreases the temperature by 1 degree', function (){
       thermostat1.downButton();
-      expect(thermostat1.temperature).toEqual(20);
+      expect(thermostat1.temperature).toEqual(19);
     });
-
 
     it ('fails when reaches minimum temp', function() {
       for(var i = 20; i > 10; i--){
@@ -25,7 +29,8 @@ describe ('Thermostat', function(){
     });
 
     it ('can change powersaving mode', function(){
-      expect(thermostat1.isPowerSaving()).toEqual(true);
+      thermostat1.switchPowerSaving();
+      expect(thermostat1.power).toEqual(false);
     });
 
     it ('sets maxtemp when power saving mode is on', function() {
@@ -35,7 +40,33 @@ describe ('Thermostat', function(){
 
     it ('sets maxtemp when power saving mode is off', function() {
       thermostat1.temperature = 32;
-      thermostat1.isntPowerSaving();
+      thermostat1.switchPowerSaving();
       expect(thermostat1.upButton()).toEqual("max temp reached");
     });
+
+    it ('checks power saving is on by default', function(){
+      expect(thermostat1.power).toEqual(true);
+    });
+
+    it ('resets the temp to temperature', function(){
+      thermostat1.resetTemp();
+      expect(thermostat1.temperature).toEqual(temp);
+    });
+
+    it ('checks energy usage', function() {
+      thermostat1.temperature = 17;
+      expect(thermostat1.energyUsage()).toEqual("low");
+    });
+
+    it ('checks energy usage', function() {
+      thermostat1.temperature = 20;
+      expect(thermostat1.energyUsage()).toEqual("medium");
+    });
+
+    it ('checks energy usage', function() {
+      thermostat1.temperature = 26;
+      expect(thermostat1.energyUsage()).toEqual("high");
+
+    });
+
   });

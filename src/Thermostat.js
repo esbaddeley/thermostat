@@ -1,7 +1,7 @@
 function Thermostat (){
   this.temperature = 20;
   this.MIN_TEMP = 10;
-  this.power = false;
+  this.power = true;
   this.onPower = 25;
   this.offPower = 32;
 }
@@ -18,11 +18,16 @@ Thermostat.prototype.downButton = function(){
    this.temperature -=1;
 };
 
-
-Thermostat.prototype.isPowerSaving = function (){
-  return this.power = true;
+Thermostat.prototype.switchPowerSaving = function(){
+    this.power = !this.power;
 };
 
-Thermostat.prototype.isntPowerSaving = function() {
-  return this.power = false;
+Thermostat.prototype.resetTemp = function () {
+  this.temperature = 20;
+};
+
+Thermostat.prototype.energyUsage = function () {
+  if (this.temperature < 18 ) return ("low");
+  if (this.temperature >= 18 && this.temperature < 25 ) return ("medium");
+  if (this.temperature >= 25 ) return ("high");
 };
