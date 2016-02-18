@@ -11,27 +11,34 @@ describe ('Thermostat', function(){
       expect(thermostat1.temperature).toEqual(20);
     });
 
-    it ('increases the temperature by 1 degree', function (){
-      thermostat1.upButton();
-      expect(thermostat1.temperature).toEqual(21);
-    });
 
-    it ('decreases the temperature by 1 degree', function (){
-      thermostat1.downButton();
-      expect(thermostat1.temperature).toEqual(19);
-    });
+    describe("#upButton and downButton changes temp and returns fail", function(){
 
-    it ('fails when reaches minimum temp', function() {
-      for(var i = 20; i > 10; i--){
-      thermostat1.downButton();
-    }
-    expect(thermostat1.downButton()).toEqual(this.MIN_TEMP);
-    });
+      it ('increases the temperature by 1 degree', function (){
+        thermostat1.upButton();
+        expect(thermostat1.temperature).toEqual(21);
+      });
 
-    it ('can change powersaving mode', function(){
-      thermostat1.switchPowerSaving();
-      expect(thermostat1.power).toEqual(false);
-    });
+      it ('decreases the temperature by 1 degree', function (){
+        thermostat1.downButton();
+        expect(thermostat1.temperature).toEqual(19);
+      });
+      it ('fails when reaches minimum temp', function() {
+        for(var i = 20; i > 10; i--){
+        thermostat1.downButton();
+      }
+      expect(thermostat1.downButton()).toEqual(this.MIN_TEMP);
+      });
+  });
+
+
+    describe("#switchPowerSaving", function(){
+
+      it ('can change powersaving mode', function(){
+        thermostat1.switchPowerSaving();
+        expect(thermostat1.power).toEqual(false);
+      });
+  });
 
     it ('sets maxtemp when power saving mode is on', function() {
       thermostat1.temperature = 25;
@@ -53,20 +60,24 @@ describe ('Thermostat', function(){
       expect(thermostat1.temperature).toEqual(temp);
     });
 
-    it ('checks energy usage', function() {
-      thermostat1.temperature = 17;
-      expect(thermostat1.energyUsage()).toEqual("low");
-    });
 
-    it ('checks energy usage', function() {
-      thermostat1.temperature = 20;
-      expect(thermostat1.energyUsage()).toEqual("medium");
-    });
+    describe("#energyUsage", function(){
 
-    it ('checks energy usage', function() {
-      thermostat1.temperature = 26;
-      expect(thermostat1.energyUsage()).toEqual("high");
+      it ('checks energy usage', function() {
+        thermostat1.temperature = 17;
+        expect(thermostat1.energyUsage()).toEqual("low");
+      });
 
+      it ('checks energy usage', function() {
+        thermostat1.temperature = 20;
+        expect(thermostat1.energyUsage()).toEqual("medium");
+      });
+
+      it ('checks energy usage', function() {
+        thermostat1.temperature = 26;
+        expect(thermostat1.energyUsage()).toEqual("high");
+
+      });
     });
 
   });
