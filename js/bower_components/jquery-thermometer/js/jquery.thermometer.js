@@ -3,7 +3,7 @@
 
 	var Thermometer = {
 
-		/** 
+		/**
 		 *  Set the value to show in the thermometer. If the value
 		 *  is outside the maxmimum or minimum range it shall be clipped.
 		 */
@@ -63,7 +63,7 @@
 			variables["colour"] = liquidColour;
 			variables["darkColour"] = this._blendColors( liquidColour, "#000000", 0.1 );
 			variables["veryDarkColour"] = this._blendColors( liquidColour, '#000000', 0.2 );
-		
+
 			this._formatDataAttribute( this.neckLiquid, "style", variables );
 			this._formatDataAttribute( this.liquidTop, "style", variables );
 			this._formatDataAttribute( this.bowlLiquid, "style", variables );
@@ -162,7 +162,7 @@
 
 		_formatDataAttribute: function( object, attribute, variables ) {
 			var formatString = $(object).attr("data-"+attribute);
-			for( v in variables ) {
+			for (v in variables ) {
 				formatString = formatString.replace( new RegExp("%%"+v+"%%", "g"), variables[v] );
 			}
 			$(object).attr(attribute,formatString);
@@ -178,7 +178,7 @@
 
 		_replaceOption: function( optionName, oldStyle, newOption ) {
 			return oldStyle.replace(
-				new RegExp(optionName+":#[a-z0-9]{6}", "i"), 
+				new RegExp(optionName+":#[a-z0-9]{6}", "i"),
 				optionName+":"+newOption );
 		},
 
@@ -202,7 +202,7 @@
 			pathToSVG: "svg/thermo-bottom.svg",
 			valueChanged: undefined
 		}
-	}
+	};
 
 	$.widget( "dd.thermometer", Thermometer );
 
