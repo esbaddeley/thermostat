@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -50,7 +50,10 @@ body {
   width: 100vw;
   height: 100vh;
   font: 100% "Source Sans Pro", Helvetica, sans-serif;
-  background: url("images/brick-wall.jpeg") repeat 0 0; }
+  background: url("images/brick-wall.jpeg") repeat 0 0;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
 
 button {
   border: none;
