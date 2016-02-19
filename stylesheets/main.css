@@ -1,6 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 body {
-  font: 100% "Source Sans Pro", Helvetica, sans-serif; }
+  font: 100% "Source Sans Pro", Helvetica, sans-serif;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
 
 .low {
   color: #3680e2; }
