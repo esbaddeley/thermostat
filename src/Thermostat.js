@@ -1,33 +1,53 @@
-function Thermostat (){
-  this.temperature = 20;
+function Thermostat() {
+  'use strict';
+
   this.MIN_TEMP = 10;
-  this.power = true;
-  this.onPower = 25;
-  this.offPower = 32;
+  this.DEFAULT_TEMP = 20;
+  this.temperature = this.DEFAULT_TEMP;
+  this.powerSavingMode = true;
+  this.MAX_TEMP = this.powerSavingMode ? 25 : 32;
 }
 
-Thermostat.prototype.upButton = function(){
-  if (this.temperature === this.offPower && this.power === false) return ("max temp reached");
-  if (this.temperature === this.onPower && this.power) return ("Power saving, max temp reached");
-  this.temperature +=1;
-    //console.log(this.temperature);
+Thermostat.prototype.getCurrentTemperature = function () {
+  return this.temperature;
 };
 
-Thermostat.prototype.downButton = function(){
-   if (this.temperature < this.MIN_TEMP) return this.MIN_TEMP;
-   this.temperature -=1;
+Thermostat.prototype.isMaxTemperature = function () {
+  return this.getCurrentTemperature() === this.MAX_TEMP;
 };
 
-Thermostat.prototype.switchPowerSaving = function(){
-    this.power = !this.power;
+Thermostat.prototype.isMinTemperature = function () {
+  return this.getCurrentTemperature() === this.MIN_TEMP;
 };
 
-Thermostat.prototype.resetTemp = function () {
-  this.temperature = 20;
+Thermostat.prototype.isInPowerSavingMode = function () {
+  return this.powerSavingMode;
+};
+
+Thermostat.prototype.up = function () {
+  if (this.getCurrentTemperature() >= this.MAX_TEMP) {
+    return;
+  }
+  this.temperature += 1;
+};
+
+Thermostat.prototype.down = function () {
+  if (this.getCurrentTemperature() <= this.MIN_TEMP) {
+    return;
+  }
+  this.temperature -= 1;
+};
+
+Thermostat.prototype.switchPowerSaving = function () {
+    this.powerSavingMode = !this.powerSavingMode;
+};
+
+Thermostat.prototype.resetTemperature = function () {
+  this.temperature = this.DEFAULT_TEMP;
 };
 
 Thermostat.prototype.energyUsage = function () {
-  if (this.temperature < 18 ) return ("low");
-  if (this.temperature >= 18 && this.temperature < 25 ) return ("medium");
-  if (this.temperature >= 25 ) return ("high");
+  if (this.getCurrentTemperature() < 18 ) return ("low");
+  if (this.getCurrentTemperature() >= 18 && this.getCurrentTemperature() < 25 ) return ("medium");
+  if (this.getCurrentTemperature() >= 25 ) return ("high");
 };
