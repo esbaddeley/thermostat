@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font: 100% "Source Sans Pro", Helvetica, sans-serif;
+  background: url("images/brick-wall.jpeg") repeat 0 0; }
+
+button {
+  border: none;
+  font-size: 2em;
+  background: none; }
+
+#thermostat-ui-container {
+  display: flex;
+  border: .25em solid;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  border-radius: 100%;
+  width: 20em;
+  height: 20em;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+  #thermostat-ui-container #thermostat-ui #temperature {
+    position: relative; }
+    #thermostat-ui-container #thermostat-ui #temperature #temperature-num {
+      font-size: 6em; }
+    #thermostat-ui-container #thermostat-ui #temperature #degrees-symbol {
+      position: absolute;
+      top: 2em; }
+  #thermostat-ui-container #thermostat-ui #powersaving-mode {
+    margin: 10px 0; }
+  #thermostat-ui-container #thermostat-ui #powersaving-switch {
+    font-size: 1.5em; }
+
+.controls {
+  font-size: 3em;
+  margin: 0 .2em; }
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.low {
+  color: #3680e2; }
+
+.medium {
+  color: #ff960a; }
+
+.high {
+  color: #e93e3e; }
+
+/*# sourceMappingURL=main.sass.map */
