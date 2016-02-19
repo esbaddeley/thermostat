@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+body {
+  font: 100% "Source Sans Pro", Helvetica, sans-serif; }
+
+.low {
+  color: #3680e2; }
+
+.medium {
+  color: #ff960a; }
+
+.high {
+  color: #e93e3e; }
+
+/*# sourceMappingURL=main.css.map */

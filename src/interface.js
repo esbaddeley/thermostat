@@ -34,7 +34,7 @@ $( document ).ready(function() {
 
     function updateTemperature() {
       $('#temperature').text(thermostat.getCurrentTemperature() + ' \u2103');
-      $('body').attr('class', thermostat.energyUsage());
+      $('#temperature').attr('class', thermostat.energyUsage());
     }
 
     function displayWeather() {
