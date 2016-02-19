@@ -1,12 +1,75 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+@import "partials/reset";
 $font-stack: "Source Sans Pro", Helvetica, sans-serif;
 
 $low-power: rgb(54, 128, 226);
 $med-power: rgb(255, 150, 10);
 $high-power: rgb(233, 62, 62);
 
+@mixin circle-border() {
+  border: .25em solid;
+  -webkit-border-radius: 100%;
+     -moz-border-radius: 100%;
+      -ms-border-radius: 100%;
+          border-radius: 100%;
+}
+
 body {
+  width: 100vw;
+  height: 100vh;
   font: 100% $font-stack;
+  background: url('images/brick-wall.jpeg') repeat 0 0;
+}
+
+button {
+  border: none;
+  font-size: 2em;
+  background: none;
+}
+
+#thermostat-ui-container {
+  display: flex;
+  @include circle-border();
+  width: 20em;
+  height: 20em;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  #thermostat-ui {
+    #temperature {
+      position: relative;
+
+      #temperature-num {
+        font-size: 6em;
+      }
+
+      #degrees-symbol {
+        position: absolute;
+        top: 2em;
+      }
+    }
+
+    #powersaving-mode {
+      margin: 10px 0;
+    }
+    #powersaving-switch {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.controls {
+  font-size: 3em;
+  margin: 0 .2em;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .low {

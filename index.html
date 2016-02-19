@@ -2,19 +2,24 @@
 <html>
   <head>
     <title>Thermostat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
   </head>
 
   <body>
-    <section id="thermostat-ui">
-      <h1 id="temperature"></h1>
-      <p>
-        <button id="temperature-up">+</button>
-        <button id="temperature-down">-</button>
-        <button id="temperature-reset">reset</button>
-        power saving mode is <span id="powersaving-status">on</span>
-        <button id="powersaving-switch">off</button>
-      </p>
+    <section id="thermostat-ui-container" class="centered">
+      <div id="thermostat-ui">
+        <h1 id="temperature"><span id="temperature-num"></span> <span id="degrees-symbol">&#x2103</span></h1>
+        <p>
+          <button id="temperature-up" class="controls">+</button>
+          <button id="temperature-reset" class="controls">&#x21BB</button>
+          <button id="temperature-down" class="controls">-</button>
+        </p>
+        <p id="powersaving-mode">
+          PowerSaving: <span id="powersaving-status">ON</span>
+        </p>
+        <button id="powersaving-switch"><i class="fa fa-power-off"></i></button>
+      </div>
     </section>
 
     <section id="weather">

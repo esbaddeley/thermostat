@@ -22,8 +22,7 @@ $( document ).ready(function() {
 
     $('#powersaving-switch').click(function() {
       thermostat.switchPowerSaving();
-      $('#powersaving-status').text(thermostat.isInPowerSavingMode() ? "on" : "off");
-      $('#powersaving-switch').text(!thermostat.isInPowerSavingMode() ? "on" : "off");
+      $('#powersaving-status').text(thermostat.isInPowerSavingMode() ? "ON" : "OFF");
     });
 
     $('#select-city').submit(function () {
@@ -33,7 +32,7 @@ $( document ).ready(function() {
     });
 
     function updateTemperature() {
-      $('#temperature').text(thermostat.getCurrentTemperature() + ' \u2103');
+      $('#temperature-num').text(thermostat.getCurrentTemperature());
       $('#temperature').attr('class', thermostat.energyUsage());
     }
 
